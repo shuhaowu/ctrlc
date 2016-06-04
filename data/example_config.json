@@ -1,0 +1,22 @@
+{
+  "src": "/home/vagrant/testdata",
+  "dest": "file:///home/vagrant/backedup",
+  "duplicity_version": "0.7.07.1",
+  "backup_actions": [
+    "/home/vagrant/before",
+    "!cleanup",
+    "!backup",
+    "!verify",
+    "!remove_old"
+    "/home/vagrant/backup-to-b2"
+  ],
+  "cleanup_actions": ["/home/vagrant/after"],
+  "remove-all-but-n-full": 10,
+  "options": {
+    "hidden-encrypt-key": "3EFE2968",
+    "sign-key": "8D352169",
+    "full-if-older-than": "2W",
+    "archive-dir": "/home/vagrant/archive1",
+    "tempdir": "/home/vagrant/tmp1"
+  }
+}

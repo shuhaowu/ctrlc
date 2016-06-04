@@ -1,0 +1,10 @@
+---
+- name: installing dependencies
+  with_items:
+    - librsync-dev
+    - python-lockfile
+    - python-setuptools
+    - python-dev
+    - build-essential
+  apt: pkg={{ item }} state=latest default_release=sid
+

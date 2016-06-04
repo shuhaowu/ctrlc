@@ -1,0 +1,18 @@
+---
+- name: copy sid list
+  copy: src=etc/apt/sources.list.d/sid.list
+        dest=/etc/apt/sources.list.d/sid.list
+        owner=root
+        group=root
+        mode=0644
+
+- name: copy sid preferences
+  copy: src=etc/apt/preferences
+        dest=/etc/apt/preferences
+        owner=root
+        group=root
+        mode=0644
+
+- name: updating apt
+  apt: upgrade=dist
+       update_cache=yes
